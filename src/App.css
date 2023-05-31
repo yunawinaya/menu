@@ -1,49 +1,40 @@
-/* Custom styles for the main heading */
-h1 {
-  font-size: 36px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Custom styles for the Category title */
-.category h2 {
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Custom styles for the MenuItem component */
 .menu-item {
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
 }
 
-.menu-item .item-details {
-  flex-grow: 1;
-  margin-right: 20px;
-}
-
-.menu-item h4 {
-  margin-bottom: 5px;
-}
-
-.menu-item .price {
+.price {
   font-weight: bold;
 }
 
-/* Custom styles for the NutritionalInfo component */
-.nutritional-info p {
-  margin-bottom: 5px;
+.nutritional-info {
+  margin-top: 10px;
 }
 
-/* Custom styles for the container and row */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.allergens {
+  margin-top: 10px;
+}
+
+.allergen-marker {
+  display: inline-block;
+  padding: 2px 6px;
+  color: #fff;
+  margin-right: 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.category {
+  margin-bottom: 30px;
+}
+
+.category h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .row {
-  margin-left: -10px;
-  margin-right: -10px;
+  display: flex;
+  flex-wrap: wrap;
 }
