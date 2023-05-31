@@ -1,14 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const allergenColors = {
-  Nuts: "#e74c3c",
-  Gluten: "#f1c40f",
-  Dairy: "#3498db",
-  Soy: "#2ecc71",
-  Shellfish: "#9b59b6",
-};
-
 function NutritionalInfo({ nutritionInfo }) {
   return (
     <div className="nutritional-info">
@@ -16,6 +8,32 @@ function NutritionalInfo({ nutritionInfo }) {
       <p className="mb-0">Protein: {nutritionInfo.protein} g</p>
       <p className="mb-0">Carbs: {nutritionInfo.carbs} g</p>
       <p className="mb-0">Fat: {nutritionInfo.fat} g</p>
+    </div>
+  );
+}
+
+function Allergens({ allergens }) {
+  const allergenColors = {
+    Nuts: "#e74c3c",
+    Gluten: "#f1c40f",
+    Dairy: "#3498db",
+  };
+
+  return (
+    <div className="allergens">
+      {allergens.map((allergen, index) => {
+        const color = allergenColors[allergen];
+
+        return (
+          <span
+            key={index}
+            className="allergen-marker"
+            style={{ backgroundColor: color }}
+          >
+            {allergen}
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -30,18 +48,7 @@ function MenuItem({ name, price, imageUrl, nutritionInfo, allergens }) {
       </div>
       <div className="card-footer">
         <NutritionalInfo nutritionInfo={nutritionInfo} />
-        <div className="allergens">
-          <p className="mb-0">Allergens:</p>
-          {allergens.map((allergen, index) => (
-            <span
-              key={index}
-              className="allergen-marker"
-              style={{ backgroundColor: allergenColors[allergen] }}
-            >
-              {allergen}
-            </span>
-          ))}
-        </div>
+        <Allergens allergens={allergens} />
       </div>
     </div>
   );
